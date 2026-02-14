@@ -15,7 +15,7 @@ const api = new stockmarketopentimesAPI({
 
 // Example query
 var query = {
-  exchange: "nyse"
+  exchange: "NYSE"
 };
 
 // Make the API request using callback
