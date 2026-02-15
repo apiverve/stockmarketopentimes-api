@@ -11,8 +11,7 @@ namespace APIVerve.API.StockMarketOpenTimes
     public class StockMarketOpenTimesQueryOptions
     {
         /// <summary>
-        /// The stock exchange for which you want to get the open times (e.g. NYSE, NASDAQ, BATS, CHX, PHLX, AMEX, ARCA, ISE, CBOE, LSE, FWB, TSE, HKEX, ASX, BSE, JSE, SSE, SZSE, SGX, EURONEXT, TSX, MOEX, SIX, BIST, JPX, KRX, IDX, SET, MYX, TWSE, HOSE, DFM, ADX, QSE, EGX, BCB, BVSP, BVC, BMV, KSE, TAWUDAL)
-        /// Example: nyse
+        /// The stock exchange code
         /// </summary>
         [JsonProperty("exchange")]
         public string Exchange { get; set; }
