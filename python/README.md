@@ -221,8 +221,9 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]")
 
+query = { "exchange": "NYSE" }
+
 try:
-    query = { "exchange": "NYSE" }
     result = api.execute(query)
     print(result)
 finally:
