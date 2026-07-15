@@ -4,21 +4,33 @@ declare module '@apiverve/stockmarketopentimes' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface stockmarketopentimesResponse {
     status: string;
     error: string | null;
     data: StockMarketOpenTimesData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface StockMarketOpenTimesData {
-      timezone:    string;
-      exchange:    string;
-      fullName:    string;
-      isOpen:      boolean;
-      openingTime: Date;
-      closingTime: Date;
+      timezone:    null | string;
+      exchange:    null | string;
+      fullName:    null | string;
+      isOpen:      boolean | null;
+      openingTime: Date | null;
+      closingTime: Date | null;
   }
 
   export default class stockmarketopentimesWrapper {
