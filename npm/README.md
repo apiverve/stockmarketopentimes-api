@@ -126,8 +126,8 @@ async function makeRequest() {
     "exchange": "NYSE",
     "fullName": "New York Stock Exchange",
     "isOpen": false,
-    "openingTime": "2025-02-20 09:30:00",
-    "closingTime": "2025-02-20 16:00:00"
+    "openingTime": "2025-12-16 09:30:00",
+    "closingTime": "2025-12-16 16:00:00"
   }
 }
 ```
