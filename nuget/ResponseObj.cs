@@ -25,6 +25,9 @@ namespace APIVerve.API.StockMarketOpenTimes
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,12 +42,24 @@ namespace APIVerve.API.StockMarketOpenTimes
         public string FullName { get; set; }
 
         [JsonProperty("isOpen")]
-        public bool IsOpen { get; set; }
+        public bool? IsOpen { get; set; }
 
         [JsonProperty("openingTime")]
-        public DateTimeOffset OpeningTime { get; set; }
+        public DateTimeOffset? OpeningTime { get; set; }
 
         [JsonProperty("closingTime")]
-        public DateTimeOffset ClosingTime { get; set; }
+        public DateTimeOffset? ClosingTime { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
