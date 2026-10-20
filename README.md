@@ -1,13 +1,13 @@
-# [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Stock Market Open Times is a simple tool for getting the open times of the stock market. It returns the open times of the stock market for each day of the week.
+Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.
 
 The Stock Market Open Times API provides a simple, reliable way to integrate stock market open times functionality into your applications. Built for developers who need production-ready stock market open times capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/stockmarketopentimes-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/stockmarketopentimes](https://docs.apiverve.com/ref/stockmarketopentimes)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,33 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Stock Market Open Times API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "timezone": "America/New_York",
+    "exchange": "NYSE",
+    "fullName": "New York Stock Exchange",
+    "isOpen": false,
+    "openingTime": "2025-12-16 09:30:00",
+    "closingTime": "2025-12-16 16:00:00"
+  }
 }
 ```
 
@@ -203,7 +225,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

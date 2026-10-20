@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Stock Market Open Times
   description: >-
-    Stock Market Open Times is a simple tool for getting the open times of the
-    stock market. It returns the open times of the stock market for each day of
-    the week.
+    Stock Market Open Times checks if a global stock exchange is currently
+    trading and provides its opening and closing times. Pass an exchange code
+    like NYSE or LSE to get current open status, official exchange name, and
+    session hours.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/stockmarketopentimes:
     get:
-      summary: Lookup Market Open Times
+      summary: Stock Market Open Times
       description: >-
         Get the open times of the stock market on the current date of the
         request
