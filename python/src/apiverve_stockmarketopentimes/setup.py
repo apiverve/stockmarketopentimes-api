@@ -10,14 +10,14 @@ if os.path.exists(requirements_file):
 
 setup(
     name='apiverve_stockmarketopentimes',
-    version='1.1.14',
+    version='1.2.2',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
-    description='Stock Market Open Times is a simple tool for getting the open times of the stock market. It returns the open times of the stock market for each day of the week.',
+    description='Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.',
     author='APIVerve',
     author_email='hello@apiverve.com',
-    url='https://apiverve.com/marketplace/stockmarketopentimes?utm_source=pypi&utm_medium=homepage',
+    url='https://apiverve.com/marketplace/stockmarketopentimes?utm_source=pypi&utm_medium=referral&utm_content=homepage',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',

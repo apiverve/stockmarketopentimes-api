@@ -1,13 +1,12 @@
 Stock Market Open Times API
 ============
 
-Stock Market Open Times is a simple tool for getting the open times of the stock market. It returns the open times of the stock market for each day of the week.
+Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-stockmarketopentimes.svg)](https://pypi.org/project/apiverve-stockmarketopentimes/)
+
+This is a Python wrapper for the [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-stockmarketopentimes
 
 ## Configuration
 
-Before using the stockmarketopentimes API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Stock Market Open Times API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Stock Market Open Times API documentation is found here: [https://docs.apiverve.com/ref/stockmarketopentimes](https://docs.apiverve.com/ref/stockmarketopentimes?utm_source=pypi&utm_medium=readme).
+The Stock Market Open Times API documentation is found here: [https://docs.apiverve.com/ref/stockmarketopentimes](https://docs.apiverve.com/ref/stockmarketopentimes?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -106,8 +105,8 @@ print(result)
     "exchange": "NYSE",
     "fullName": "New York Stock Exchange",
     "isOpen": false,
-    "openingTime": "2025-02-20 09:30:00",
-    "closingTime": "2025-02-20 16:00:00"
+    "openingTime": "2025-12-16 09:30:00",
+    "closingTime": "2025-12-16 16:00:00"
   }
 }
 ```
@@ -235,7 +234,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -246,12 +245,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
