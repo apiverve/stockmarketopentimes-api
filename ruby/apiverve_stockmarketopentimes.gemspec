@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_stockmarketopentimes"
-  spec.version       = "1.2.4"
+  spec.version       = "1.2.5"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "Stock Market Open Times API - Ruby Client"
-  spec.description   = "Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours."
+  spec.description   = "Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status (open, closed, weekend or holiday), the holiday name, official exchange name, and session hours. On paid plans, add schedule=true for the exchange's local time, half-day early closes, and the next open and close with a countdown in minutes."
   spec.homepage      = "https://apiverve.com/marketplace/stockmarketopentimes?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"

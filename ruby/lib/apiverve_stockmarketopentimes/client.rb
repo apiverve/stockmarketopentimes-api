@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Stockmarketopentimes::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ exchange: "NYSE" })
+    #   response = client.execute({ exchange: "NYSE", schedule: true })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/stockmarketopentimes?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'exchange' => { type: 'string', required: true } }
+      VALIDATION_RULES = { 'exchange' => { type: 'string', required: true }, 'schedule' => { type: 'boolean', required: false } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
