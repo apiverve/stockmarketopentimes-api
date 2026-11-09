@@ -1,6 +1,6 @@
 # [Stock Market Open Times API](https://apiverve.com/marketplace/stockmarketopentimes?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.
+Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status (open, closed, weekend or holiday), the holiday name, official exchange name, and session hours. On paid plans, add schedule&#x3D;true for the exchange&#x27;s local time, half-day early closes, and the next open and close with a countdown in minutes.
 
 The Stock Market Open Times API provides a simple, reliable way to integrate stock market open times functionality into your applications. Built for developers who need production-ready stock market open times capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The Stock Market Open Times API provides a simple, reliable way to integrate sto
 async function callStockMarketOpenTimesAPI() {
     try {
         const params = new URLSearchParams({
-            exchange: 'NYSE'
+            exchange: 'NYSE',
+            schedule: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/stockmarketopentimes?${params}`, {
@@ -54,7 +55,7 @@ callStockMarketOpenTimesAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/stockmarketopentimes?exchange=NYSE" \
+curl -X GET "https://api.apiverve.com/v1/stockmarketopentimes?exchange=NYSE&schedule=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -215,8 +216,18 @@ A real response from the Stock Market Open Times API:
     "exchange": "NYSE",
     "fullName": "New York Stock Exchange",
     "isOpen": false,
-    "openingTime": "2025-12-16 09:30:00",
-    "closingTime": "2025-12-16 16:00:00"
+    "openingTime": "2026-11-06 09:30:00",
+    "closingTime": "2026-11-06 16:00:00",
+    "status": "closed",
+    "holidayName": null,
+    "localTime": "2026-11-06 01:26:52",
+    "isHalfDay": false,
+    "earlyCloseTime": null,
+    "nextChange": "open",
+    "nextOpen": "2026-11-06T09:30:00-05:00",
+    "nextClose": "2026-11-06T16:00:00-05:00",
+    "minutesUntilChange": 484,
+    "calendarVerified": true
   }
 }
 ```

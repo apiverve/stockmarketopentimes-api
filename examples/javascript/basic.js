@@ -15,7 +15,8 @@ async function callStockMarketOpenTimesAPI() {
   try {
     // Query parameters
     const params &#x3D; new URLSearchParams({
-            exchange: &#x27;NYSE&#x27;
+            exchange: &#x27;NYSE&#x27;,
+            schedule: true
         });
 
     const response = await fetch(`${API_URL}?${params}`, {

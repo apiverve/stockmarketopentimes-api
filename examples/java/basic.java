@@ -15,6 +15,7 @@ public class BasicExample {
             // Query parameters
             Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
         parameters.put(&quot;exchange&quot;, &quot;NYSE&quot;);
+        parameters.put(&quot;schedule&quot;, true);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);

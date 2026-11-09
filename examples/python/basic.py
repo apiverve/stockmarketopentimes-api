@@ -18,7 +18,7 @@ def call_stockmarketopentimes_api():
     """
     try:
         # Query parameters
-        params &#x3D; {&#x27;exchange&#x27;: &#x27;NYSE&#x27;}
+        params &#x3D; {&#x27;exchange&#x27;: &#x27;NYSE&#x27;, &#x27;schedule&#x27;: true}
 
         headers = {
             'x-api-key': API_KEY

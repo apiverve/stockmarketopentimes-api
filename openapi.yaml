@@ -4,8 +4,10 @@ info:
   description: >-
     Stock Market Open Times checks if a global stock exchange is currently
     trading and provides its opening and closing times. Pass an exchange code
-    like NYSE or LSE to get current open status, official exchange name, and
-    session hours.
+    like NYSE or LSE to get current open status (open, closed, weekend or
+    holiday), the holiday name, official exchange name, and session hours. On
+    paid plans, add schedule=true for the exchange's local time, half-day early
+    closes, and the next open and close with a countdown in minutes.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -22,8 +24,8 @@ paths:
     get:
       summary: Stock Market Open Times
       description: >-
-        Get the open times of the stock market on the current date of the
-        request
+        Get the open times and trading status of the stock market on the current
+        date of the request, optionally with the next open and close
       operationId: stockmarketopentimes
       parameters:
         - name: exchange
@@ -33,6 +35,15 @@ paths:
           required: true
           description: The stock exchange code
           example: NYSE
+        - name: schedule
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include local time, half-day early close, next open and close, and
+            minutes until the next change
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -58,8 +69,18 @@ paths:
                   exchange: NYSE
                   fullName: New York Stock Exchange
                   isOpen: false
-                  openingTime: '2025-12-16 09:30:00'
-                  closingTime: '2025-12-16 16:00:00'
+                  openingTime: '2026-11-06 09:30:00'
+                  closingTime: '2026-11-06 16:00:00'
+                  status: closed
+                  holidayName: null
+                  localTime: '2026-11-06 01:26:52'
+                  isHalfDay: false
+                  earlyCloseTime: null
+                  nextChange: open
+                  nextOpen: '2026-11-06T09:30:00-05:00'
+                  nextClose: '2026-11-06T16:00:00-05:00'
+                  minutesUntilChange: 484
+                  calendarVerified: true
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
