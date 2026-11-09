@@ -15,7 +15,7 @@ use APIVerve\Stockmarketopentimes\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['exchange' => 'NYSE']);
+ * $response = $client->execute(['exchange' => 'NYSE', 'schedule' => true]);
  * print_r($response);
  * ```
  *
@@ -34,7 +34,8 @@ class Client
      * Validation rules for parameters
      */
     private const VALIDATION_RULES = [
-        'exchange' => ['type' => 'string', 'required' => true]
+        'exchange' => ['type' => 'string', 'required' => true],
+        'schedule' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
