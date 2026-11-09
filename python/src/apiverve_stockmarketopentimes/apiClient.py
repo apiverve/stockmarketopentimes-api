@@ -24,7 +24,8 @@ class ValidationError(StockmarketopentimesAPIClientError):
 class StockmarketopentimesAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "exchange": {"type": "string", "required": True}
+        "exchange": {"type": "string", "required": True},
+        "schedule": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns

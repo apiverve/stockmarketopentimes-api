@@ -1,7 +1,7 @@
 Stock Market Open Times API
 ============
 
-Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.
+Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status (open, closed, weekend or holiday), the holiday name, official exchange name, and session hours. On paid plans, add schedule=true for the exchange's local time, half-day early closes, and the next open and close with a countdown in minutes.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-stockmarketopentimes.svg)](https://pypi.org/project/apiverve-stockmarketopentimes/)
@@ -43,7 +43,10 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 # Initialize the client with your APIVerve API key
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]")
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 try:
     # Make the API call
@@ -81,7 +84,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 ```
 
 ###### Simple Request
@@ -105,8 +111,18 @@ print(result)
     "exchange": "NYSE",
     "fullName": "New York Stock Exchange",
     "isOpen": false,
-    "openingTime": "2025-12-16 09:30:00",
-    "closingTime": "2025-12-16 16:00:00"
+    "openingTime": "2026-11-06 09:30:00",
+    "closingTime": "2026-11-06 16:00:00",
+    "status": "closed",
+    "holidayName": null,
+    "localTime": "2026-11-06 01:26:52",
+    "isHalfDay": false,
+    "earlyCloseTime": null,
+    "nextChange": "open",
+    "nextOpen": "2026-11-06T09:30:00-05:00",
+    "nextClose": "2026-11-06T16:00:00-05:00",
+    "minutesUntilChange": 484,
+    "calendarVerified": true
   }
 }
 ```
@@ -124,7 +140,10 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]")
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 try:
     result = api.execute(query)
@@ -145,7 +164,10 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]")
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 try:
     result = api.execute(query)
@@ -179,7 +201,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClient, StockmarketopentimesAPIClientError
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 # Using context manager ensures proper cleanup
 with StockmarketopentimesAPIClient("[YOUR_API_KEY]") as api:
@@ -205,7 +230,10 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 # Enable debug mode
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -220,7 +248,10 @@ from apiverve_stockmarketopentimes.apiClient import StockmarketopentimesAPIClien
 
 api = StockmarketopentimesAPIClient("[YOUR_API_KEY]")
 
-query = { "exchange": "NYSE" }
+query = {
+    "exchange": "NYSE",
+    "schedule": true
+}
 
 try:
     result = api.execute(query)
