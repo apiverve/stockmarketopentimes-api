@@ -30,7 +30,7 @@ class stockmarketopentimesWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/stockmarketopentimes';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"exchange":{"type":"string","required":true}};
+        this.validationRules = {"exchange":{"type":"string","required":true},"schedule":{"type":"boolean","required":false,"default":false}};
     }
 
     /**

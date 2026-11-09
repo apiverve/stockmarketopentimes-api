@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/stockmarketopentimes",
-  "version": "1.2.4",
-  "description": "Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.",
+  "version": "1.2.5",
+  "description": "Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status (open, closed, weekend or holiday), the holiday name, official exchange name, and session hours. On paid plans, add schedule=true for the exchange's local time, half-day early closes, and the next open and close with a countdown in minutes.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,

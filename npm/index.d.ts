@@ -25,12 +25,22 @@ declare module '@apiverve/stockmarketopentimes' {
 
 
   interface StockMarketOpenTimesData {
-      timezone:    null | string;
-      exchange:    null | string;
-      fullName:    null | string;
-      isOpen:      boolean | null;
-      openingTime: Date | null;
-      closingTime: Date | null;
+      timezone:           null | string;
+      exchange:           null | string;
+      fullName:           null | string;
+      isOpen:             boolean | null;
+      openingTime:        Date | null;
+      closingTime:        Date | null;
+      status:             null | string;
+      holidayName:        null;
+      localTime:          Date | null;
+      isHalfDay:          boolean | null;
+      earlyCloseTime:     null;
+      nextChange:         null | string;
+      nextOpen:           Date | null;
+      nextClose:          Date | null;
+      minutesUntilChange: number | null;
+      calendarVerified:   boolean | null;
   }
 
   export default class stockmarketopentimesWrapper {
