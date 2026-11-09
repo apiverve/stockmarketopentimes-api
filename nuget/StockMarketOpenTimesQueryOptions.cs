@@ -15,5 +15,11 @@ namespace APIVerve.API.StockMarketOpenTimes
         /// </summary>
         [JsonProperty("exchange")]
         public string Exchange { get; set; }
+
+        /// <summary>
+        /// Include local time, half-day early close, next open and close, and minutes until the next change
+        /// </summary>
+        [JsonProperty("schedule")]
+        public bool? Schedule { get; set; }
     }
 }

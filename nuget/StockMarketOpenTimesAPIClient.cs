@@ -67,7 +67,8 @@ namespace APIVerve.API.StockMarketOpenTimes
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "exchange", new ValidationRule { Type = "string", Required = true } }
+            { "exchange", new ValidationRule { Type = "string", Required = true } },
+            { "schedule", new ValidationRule { Type = "boolean", Required = false } }
         };
 
         /// <summary>Format validation patterns</summary>

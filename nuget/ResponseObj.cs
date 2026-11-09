@@ -49,6 +49,36 @@ namespace APIVerve.API.StockMarketOpenTimes
 
         [JsonProperty("closingTime")]
         public DateTimeOffset? ClosingTime { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("holidayName")]
+        public object HolidayName { get; set; }
+
+        [JsonProperty("localTime")]
+        public DateTimeOffset? LocalTime { get; set; }
+
+        [JsonProperty("isHalfDay")]
+        public bool? IsHalfDay { get; set; }
+
+        [JsonProperty("earlyCloseTime")]
+        public object EarlyCloseTime { get; set; }
+
+        [JsonProperty("nextChange")]
+        public string NextChange { get; set; }
+
+        [JsonProperty("nextOpen")]
+        public DateTimeOffset? NextOpen { get; set; }
+
+        [JsonProperty("nextClose")]
+        public DateTimeOffset? NextClose { get; set; }
+
+        [JsonProperty("minutesUntilChange")]
+        public long? MinutesUntilChange { get; set; }
+
+        [JsonProperty("calendarVerified")]
+        public bool? CalendarVerified { get; set; }
     }
 
     public partial class Premium

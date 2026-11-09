@@ -1,7 +1,7 @@
 Stock Market Open Times API
 ============
 
-Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status, official exchange name, and session hours.
+Stock Market Open Times checks if a global stock exchange is currently trading and provides its opening and closing times. Pass an exchange code like NYSE or LSE to get current open status (open, closed, weekend or holiday), the holiday name, official exchange name, and session hours. On paid plans, add schedule=true for the exchange's local time, half-day early closes, and the next open and close with a countdown in minutes.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.StockMarketOpenTimes.svg)](https://www.nuget.org/packages/APIVerve.API.StockMarketOpenTimes)
@@ -60,7 +60,8 @@ class Program
         var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new StockMarketOpenTimesQueryOptions {
-            Exchange = "NYSE"
+            Exchange = "NYSE",
+            Schedule = true
         };
 
         // Make the API call
@@ -124,7 +125,8 @@ public class Example
         var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new StockMarketOpenTimesQueryOptions {
-            Exchange = "NYSE"
+            Exchange = "NYSE",
+            Schedule = true
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -156,7 +158,8 @@ public class Example
         var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new StockMarketOpenTimesQueryOptions {
-            Exchange = "NYSE"
+            Exchange = "NYSE",
+            Schedule = true
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -193,7 +196,8 @@ public class Example
         var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]");
 
         var queryOptions = new StockMarketOpenTimesQueryOptions {
-            Exchange = "NYSE"
+            Exchange = "NYSE",
+            Schedule = true
         };
 
         try
@@ -249,7 +253,8 @@ public class Example
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
         var queryOptions = new StockMarketOpenTimesQueryOptions {
-            Exchange = "NYSE"
+            Exchange = "NYSE",
+            Schedule = true
         };
 
         try
@@ -290,7 +295,8 @@ apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
 var queryOptions = new StockMarketOpenTimesQueryOptions {
-    Exchange = "NYSE"
+    Exchange = "NYSE",
+    Schedule = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,7 +322,8 @@ apiClient.SetLogger(message =>
 });
 
 var queryOptions = new StockMarketOpenTimesQueryOptions {
-    Exchange = "NYSE"
+    Exchange = "NYSE",
+    Schedule = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,7 +341,8 @@ apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
 var queryOptions = new StockMarketOpenTimesQueryOptions {
-    Exchange = "NYSE"
+    Exchange = "NYSE",
+    Schedule = true
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,7 +354,8 @@ The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
 var queryOptions = new StockMarketOpenTimesQueryOptions {
-    Exchange = "NYSE"
+    Exchange = "NYSE",
+    Schedule = true
 };
 
 using (var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]"))
@@ -370,8 +379,18 @@ using (var apiClient = new StockMarketOpenTimesAPIClient("[YOUR_API_KEY]"))
     "exchange": "NYSE",
     "fullName": "New York Stock Exchange",
     "isOpen": false,
-    "openingTime": "2025-12-16 09:30:00",
-    "closingTime": "2025-12-16 16:00:00"
+    "openingTime": "2026-11-06 09:30:00",
+    "closingTime": "2026-11-06 16:00:00",
+    "status": "closed",
+    "holidayName": null,
+    "localTime": "2026-11-06 01:26:52",
+    "isHalfDay": false,
+    "earlyCloseTime": null,
+    "nextChange": "open",
+    "nextOpen": "2026-11-06T09:30:00-05:00",
+    "nextClose": "2026-11-06T16:00:00-05:00",
+    "minutesUntilChange": 484,
+    "calendarVerified": true
   }
 }
 ```
